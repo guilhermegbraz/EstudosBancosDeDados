@@ -23,7 +23,8 @@ public class TestaInsercao {
 
 
         }catch(SQLException ex){
-
+            throw new RuntimeException("Erro com o processo de criação de conexão e/ou " +
+                    "inserção de elementos na tabela");
         }
     }
 }
