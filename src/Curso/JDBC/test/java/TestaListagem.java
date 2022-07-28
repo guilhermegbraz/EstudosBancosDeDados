@@ -1,8 +1,8 @@
 package Curso.JDBC.test.java;
 
-import java.io.IOException;
+import Curso.JDBC.main.java.FabricaConexao;
+
 import java.sql.*;
-import java.util.List;
 
 public class TestaListagem {
 

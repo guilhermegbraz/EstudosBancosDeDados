@@ -1,5 +1,7 @@
 package Curso.JDBC.test.java;
 
+import Curso.JDBC.main.java.FabricaConexao;
+
 import java.sql.*;
 
 public class TestaInsercao {

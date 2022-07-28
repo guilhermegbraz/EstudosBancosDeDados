@@ -1,9 +1,10 @@
 package Curso.JDBC.test.java;
 
+import Curso.JDBC.main.java.FabricaConexao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TesteRemocao {
 
