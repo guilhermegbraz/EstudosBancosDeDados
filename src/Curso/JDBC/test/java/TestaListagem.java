@@ -10,12 +10,10 @@ public class TestaListagem {
 
         try(Connection con = new FabricaConexao().getConexao()){
 
-            Statement stm = con.createStatement();
-            boolean resultado = stm.execute("SELECT id, nome, descricao FROM PRODUTO");
+            PreparedStatement pstm = con.prepareStatement("SELECT id, nome, descricao FROM PRODUTO");
+            pstm.execute();
 
-            System.out.println(resultado);
-
-            ResultSet rs = stm.getResultSet();
+            ResultSet rs = pstm.getResultSet();
 
             //Confere se tem um próximo item (linha)
             while(rs.next()) {
@@ -30,8 +28,6 @@ public class TestaListagem {
 
                 System.out.println(id + " " + nomeProduto + " " + descricao);
             }
-
-
         }catch (SQLException ex){
             throw new RuntimeException("Falha na conexão com o banco de dados");
         }

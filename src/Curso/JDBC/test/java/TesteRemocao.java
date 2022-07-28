@@ -1,6 +1,7 @@
 package Curso.JDBC.test.java;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -11,8 +12,9 @@ public class TesteRemocao {
 
         Connection con = fabricaConexao.getConexao();
 
-        Statement stm = con.createStatement();
-        stm.execute("DELETE  FROM PRODUTO WHERE ID>2");
+        PreparedStatement stm = con.prepareStatement("DELETE  FROM PRODUTO WHERE ID > ?");
+        stm.setInt(1, 2);
+        stm.execute();
 
         //Pegar a quantidade de linhas que foram modificadas
         Integer qtdLinhasModificadas = stm.getUpdateCount();
